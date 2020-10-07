@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JponlineApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <div class="header-logo">
+      <%= link_to("JP Online", "/") %>
+    </div>
+    <ul class="header-menus">
+    <% if @current_user %>
+      <li>
+       <%= link_to( "Student:#{@current_user.name}", "/users/#{@current_user.id}/edit") %>
+      </li>
+      <li>
+        <%= link_to("Lesson", "/lessons/about") %>
+      </li>
+      <li>
+        <%= link_to("Logout", "/logout", {method: :post, data: {confirm: "Are you sure you wanted to logout?"}}) %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to("Signup", "/signup") %>
+      </li>
+      <li>
+        <%= link_to("Login", "/login") %>
+      </li>
+      <li>
+        <%= link_to("Lesson", "/lessons/about") %>
+      </li>
+      <% end %>
+    </ul>
+  </header>
+
+  <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+
+    <%= yield %>
+  </body>
+</html>

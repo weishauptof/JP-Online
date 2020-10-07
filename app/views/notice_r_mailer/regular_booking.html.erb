@@ -1,0 +1,8 @@
+<h1>Booking regular lesson is not completed</h1>
+<p>We will send you email as soon as we decide your payment details by "PayPal". Please wait a while for the payment details.</p>
+
+<p>~ Lesson details ~</p>
+<p>Teacher: <%= @lesson.teacher_name %></p>
+<p>Student: <%= @lesson.user_name %></p>
+<p>Course: Regular</p>
+<p>Start time: <%= @lesson.start_time.strftime("%d/%m/%Y %H:%M") %> ~ </p>

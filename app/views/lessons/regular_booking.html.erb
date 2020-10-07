@@ -1,0 +1,19 @@
+<div class="main lessons-new">
+  <div class="container">
+    <h2 class="form-heading">Booking Regular lesson</h2>
+    <%= form_tag("/lessons/#{@lesson.id}/regular_booked") do %>
+      <div class="form">
+        <div class="form-body">
+          <p>Teacher: <%= @lesson.teacher_name %></p>
+          <p>Student: <%= @current_user.name %></p>
+          <p>Course: Regular</p>
+          <p>Start time: <%= @lesson.start_time.strftime("%d/%m/%Y %H:%M (#{@current_user.time_zone} %:z)") %> ~ </p>
+          <%= link_to("Booking", "/lessons/#{@lesson.id}/regular_booked", {method: :post, data: {confirm: "Are you sure you wanted to this lesson? Please confirm time/date again. If this lesson is that you want to take, please press [OK] "}, class: "booking-input"} ) %>
+        </div>
+      </div>
+    <% end %> 
+    <div class="form lessons-form">
+      <%= link_to("<<back", "/lessons/regular") %>
+    </div>
+  </div>
+</div>
