@@ -1,6 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
 * {
     box-sizing: border-box;
   }
@@ -19,9 +20,12 @@
 
   a {
     text-decoration: none ;
-    color: #2d3133;
+    color: white;
     font-size: 14px;
   }
+
+  /*ボタン*/
+  
 
   h1, h2, h3, h4, h5, h6, p {
     margin: 0;
@@ -40,7 +44,6 @@
   /* 共通レイアウト ================================ */
   body {
     color: #2d3133;
-    background-color:white;
     margin: 0;
     min-height: 1vh;
   }
@@ -51,7 +54,7 @@
     width: 100%;
     height: auto;
     min-height: 100%;
-    background:linear-gradient(  rgb(255, 110, 52),rgb(252, 135, 246));
+    background:linear-gradient(  rgb(255, 81, 0),rgb(255, 48, 245));
   }
 
   .container {
@@ -65,7 +68,9 @@
   /* ヘッダー ================================ */
   header {
     height: 64px;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1;
     width: 100%;
     border-bottom: #bcc8d4 solid 1px ;
@@ -75,13 +80,13 @@
   .header-logo {
     float: left;
     padding-left: 20px;
-    color: rgb(255, 110, 52);
+    color: rgb(255, 0, 52);
     font-size: 22px;
     line-height: 64px;
   }
 
   .header-logo a{
-    color: rgb(255, 110, 52);
+    color: rgb(255, 0, 52);
     font-size: 22px;
   }
 
@@ -94,14 +99,14 @@
     float: left;
     line-height: 64px;
     font-size: 13px;
-    color:rgb(255, 110, 52);
+    color:rgb(255, 0, 52);
     padding-left: 15px;
   }
 
   .header-menus a {
     float: left;
     font-size: 13px;
-    color:rgb(255, 110, 52);
+    color:rgb(255, 0, 52);
   }
 
   .header-menus .fa {
@@ -112,56 +117,56 @@
     padding: 0 20px;
     float: left;
     line-height: 64px;
-    color:rgb(255, 110, 52);
+    color:rgb(255, 0, 52);
     margin: 0;
     font-size: 13px;
   }
 
   /* top ================================ */
-  .top-main {
-    margin-top: 64px;
-    padding: 200px 0 200px;
-    text-align: center;
-    position: absolute;
-    top: 0;
+
+
+
+  .main-back {
     width: 100%;
-    height: 500px;
-    min-height: 50%;
-    color:rgb(255, 255, 255);
-    background-image: url("/class_image.png");
-    background-color: white;
-    background-repeat: no-repeat;
-    background-position: center 50%;
+    height: 100vh;
+    background-image: url("/class_image2.png");
+    background-attachment: fixed;
     background-size: cover;
   }
 
-  .top-message {
-    position: relative;
-
+  .top-main {
+    margin-top: 64px;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    height: 700px;
+    min-height: 50%;
+    color:rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .top-main h2 {
     font-size: 70px;
-    font-weight: 500;
+    font-weight: 50;
     line-height: 1.3;
-    -webkit-font-smoothing: antialiased;
-    margin-bottom: 20px;
   }
 
   .top-main p {
     font-size: 24px;
   }
-  
+
   /* about ================================ */
-  .main-back {
-    background-color: #57575f;
-  }
+
 
   .about-main {
-    background-color: #57575f;
-    padding-top: 650px;
+    padding-top: 100px;
     padding-bottom: 100px;
     color:rgb(255, 255, 255);
+    background-image: url("/class_image2.png");
+    background-attachment: fixed;
+    background-size: cover;
   }
 
   .about-main h2 {
@@ -185,106 +190,16 @@
     width: 84%;
   }
 
-  /* フォーム================================ */
-  .form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .form-heading {
-    font-weight: 300;
-    margin: 60px 0 20px;
-    font-size: 48px;
-    color: #ffffff;
-  }
-
-  .form-body {
-    padding: 30px;
-    color: white; 
-  }
-
-  .form-error {
-    color: white;
-  }
-
-  .form input {
-    width: 100%;
-    border-bottom: 1px solid #d8dadf;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    padding: 10px;
-    color: #57575f;
-    font-size: 16px;
-    letter-spacing: 2px;
-    margin-bottom: 50px;
-  }
-
-  .form input:focus {
-    background-color: none;
-    color : white;
-  }
-
-  .form textarea {
-    width: 100%;
-    min-height: 110px;
-    font-size: 16px;
-    letter-spacing: 2px;
-  }
-
-  .form input[type="submit"] {
-    background-color: white;
-    cursor: pointer;
-    font-weight: 300;
-    width: 250px;
-    border-radius: 4px;
-    margin-top: 8px;
-    float: right;
-  }
-
-  .booking-input {
-    text-align: center;
-    width: 180px;
-    display: block;
-    padding: 10px 10px;
-    background-color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    margin: 30px auto 0 auto ;
-  }
-
-  .form-body:after {
-    display: table;
-    clear: both;
-  }
-
-  .form-error {
-    color: black;
-  }
-
-  .users-form {
-    text-align: center;
-  }
-
-  .users-form h4{
-    margin-top: 100px;
-    font-weight: lighter;
-    color: white;
-    font-size: 12px; 
-  }
-
-  .users-form a {
-    text-decoration: underline;
-    font-size: 12px;
-    color: rgb(0, 136, 170);
-  }
-
   /* lessons ================================*/
 
   .lessnos-about-main {
-    background-color: #57575f;
     padding-top: 150px;
     color:rgb(255, 255, 255);
+    position: relative;
+    background-image: url("/class_image2.png");
+    background-attachment: fixed;
+    background-size: cover;
+
   }
 
   .lessnos-about-main h2 {
@@ -321,6 +236,102 @@
     padding-top: 100px;
     padding-bottom: 100px;
   }
+ 
+
+  /* フォーム================================ */
+  .form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-heading {
+    font-weight: 300;
+    margin: 60px 0 20px;
+    font-size: 48px;
+    color: #ffffff;
+  }
+
+  .form-body {
+    padding: 30px;
+    color: white;
+  }
+
+  .form-error {
+    color: white;
+  }
+
+  .form input {
+    width: 100%;
+    border-bottom: 1px solid #d8dadf;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    color: #57575f;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+  }
+
+  .form input:focus {
+    background-color: none;
+    color : white;
+  }
+
+  .form textarea {
+    width: 100%;
+    min-height: 0px;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .form input[type="submit"] {
+    background-color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 250px;
+    border-radius: 4px;
+    margin-top: 8px;
+    float: right;
+  }
+
+  .booking-input {
+    text-align: center;
+    width: 180px;
+    display: block;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 30px auto 0 auto ;
+  }
+
+  .form-body:after {
+    display: table;
+    clear: both;
+  }
+
+  .form-error {
+    color: black;
+  }
+
+  .users-form {
+    text-align: center;
+  }
+
+  .users-form h4{
+    margin-top: 100px;
+    font-weight: lighter;
+    color: white;
+    font-size: 12px;
+  }
+
+  .users-form a {
+    text-decoration: underline;
+    font-size: 12px;
+    color: rgb(0, 136, 170);
+  }
+
+
 
 
   /* フラッシュ ================================ */
@@ -338,7 +349,6 @@
   }
 
   /*カレンダー*/
-
   .calendar-heading {
     text-align: center;
   }
@@ -348,23 +358,8 @@
     text-decoration: underline;
   }
 
-  
+
   /*先生サイド*/
-
-  .teacher-schedule {
-    background-color: #57575f;
-    padding-top: 100px;
-    color:rgb(29, 29, 29);
-  }
-
-  .teacher-schedule h2 {
-    font-size: 100px;
-    font-weight: 500;
-    line-height: 1;
-    padding-left: 5%;
-  }
-
-
   .lesson-calendar {
     margin: 30px 10% 0 10%;
     padding-bottom: 100px;
@@ -385,9 +380,8 @@
   }
 
   /*生徒サイド*/
-
-
   .students-schedule {
+    min-height: 100vh;
     background-color: #57575f;
     padding-top: 100px;
     color:white;
@@ -410,4 +404,18 @@
     font-size: 14px;
   }
 
+  /*アニメーション*/  
+  .fadein {
+    opacity : 0;
+    transform : translate(0, 50px);
+    transition : all 300ms;
+  }
+
+  .fadein.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+  }
+
+
+  
 

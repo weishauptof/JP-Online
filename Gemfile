@@ -59,3 +59,5 @@ gem 'simple_calendar', '~> 2.0'
 gem 'rails_admin', '~> 2.0.0.beta'
 
 gem 'listen'
+
+gem 'jquery-rails'
