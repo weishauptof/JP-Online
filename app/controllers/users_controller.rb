@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     if @user.password == @user.password_confirmation && @user.save
       session[:user_id] = @user.id
       flash[:notice] = "success create new account and Successful login"
+      NoticeMailer.greeting(@user).deliver
       redirect_to("/lessons/about")
     elsif @user.password != @user.password_confirmation 
       flash[:notice] = "don't match password"
