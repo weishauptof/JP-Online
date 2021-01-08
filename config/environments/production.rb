@@ -120,6 +120,6 @@ config.action_mailer.smtp_settings = {
   :domain => "heroku.com",
   :authentication => :plain,
   :user_name => 'apikey',
-  :password => ENV['SENDGRID_APIKEY'],
+  :password => ENV['SENDGRID_API_KEY'],
 }
 end
