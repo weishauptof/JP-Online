@@ -5,9 +5,11 @@ class NoticeMailer < ApplicationMailer
   #
   #   en.notice_mailer.greeting.subject
   #
-  def greeting
+  def greeting(user)
     @greeting = "Hi"
-    mail( :to => ENV['MY_EMAIL'], :subject => 'Welcome JP online!!' )
+    @user = user
+    mail( :to => @user.email,
+          :subject => 'Welcome JP online!!' )
   end
 
 end
