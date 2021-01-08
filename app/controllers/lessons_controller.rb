@@ -23,6 +23,7 @@ class LessonsController < ApplicationController
     @lesson.user_email = @current_user.email
     @lesson.course = "trial"
     if @lesson.save
+      NoticeTMailer.trial_booking(@lesson).deliver
       flash[:notice] = "Successfully booking!!"
       redirect_to("/lessons/trial")
     else
@@ -42,6 +43,7 @@ class LessonsController < ApplicationController
     @lesson.user_email = @current_user.email
     @lesson.course = "regular"
     if @lesson.save
+      NoticeRMailer.regular_booking(@lesson).deliver
       flash[:notice] = "Successfully booking!!"
       redirect_to("/lessons/regular")
     else
