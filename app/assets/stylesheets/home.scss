@@ -272,14 +272,15 @@
     margin: 60px auto;
   }
 
-  .booking-input[type="submit"] {
+  .booking-input {
+    text-align: center;
+    width: 180px;
+    display: block;
+    padding: 10px 10px;
     background-color: white;
     cursor: pointer;
-    font-weight: 300;
-    width: 250px;
     border-radius: 4px;
-    margin-top: 10px;
-    float: right;
+    margin: 30px auto 0 auto ;
   }
 
   
