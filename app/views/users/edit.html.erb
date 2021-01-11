@@ -1,41 +1,32 @@
 <div class="main users-edit">
   <div class="container">
     <div class="form-heading">Your information</div>
-    <div class="form users-form-all">
-      <div class="form-body">
-      
-
-      <%= form_with model: @user, url: "/users/update", local: true do |f| %>
-        
-        <div class="form-group">
-        <%= f.label :name, 'Name' %>
-        <%= f.text_field :name, class: 'form-control' %>
+      <div class="form users-form-all">
+        <div class="form-body">
+          <%= form_with model: @user, url: "/users/update", local: true do |f| %>
+            <div class="form-group">
+              <%= f.label :name, 'Name' %>
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :email, 'JP Online account (email)' %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :instagram, 'Your instagram account' %>
+              <%= f.text_field :instagram, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :country, "Country where your'e living in Now" %>
+              <%= f.text_field :country, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :time_zone, "Select your place's time zone" %>
+              <br><%= f.time_zone_select :time_zone %>
+            </div>      
+            <br><br><%= f.submit "Update your information", data: {confirm: "Please confirm your information again. If you're information is fine, please press [OK]. You can edit your information at any time. But 'timezome' is very improtant to book your lesson. So please select carefully. "} %>
+          <% end %>
         </div>
-     
-        <div class="form-group">
-        <%= f.label :email, 'JP Online account (email)' %>
-        <%= f.email_field :email, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-        <%= f.label :instagram, 'Your instagram account' %>
-        <%= f.text_field :instagram, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-        <%= f.label :country, "Country where your'e living in Now" %>
-        <%= f.text_field :country, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-        <%= f.label :time_zone, "Select your place's time zone" %>
-        <br><%= f.time_zone_select :time_zone %>
-        </div>
-              
-        <br><br><%= f.submit "Update your information", data: {confirm: "Please confirm your information again. If you're information is fine, please press [OK]. You can edit your information at any time. But 'timezome' is very improtant to book your lesson. So please select carefully. "} %>
-      <% end %>
       </div>
-    </div>
-    </div>
   </div>
 </div>
