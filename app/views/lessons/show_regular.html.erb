@@ -1,6 +1,6 @@
-<div class="students-schedule">
+<div class="schedule">
   <h2>Lesson schedule (Regular)</h2>
-  <div class="lesson-calendar">
+  <div class="lessons-calendar">
     <%= month_calendar events:  @lessons do |date, lessons| %>
       <%= date.day %>
         <% lessons.each do |lesson| %>
