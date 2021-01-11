@@ -98,21 +98,29 @@
 
   /* About usとLesson detail */
 
+  .main-back:before {
+    content:"";
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    height:100vh;
+    background:url("/class_image.png") center no-repeat;
+    background-size:cover;
+  }
+
   .main-back {
-    background-color: #57575f;
-    color:rgb(255, 255, 255);
+    color: white;
   }
 
   .top-main {
-    padding: 200px 0 200px;
+    padding: 500px 0 500px;
     text-align: center;
-    position: absolute;
     width: 100%;
     height: 500px;
     min-height: 50%;
-    background-image: url("/class_image.png");
-    background-position: center 50%;
-    background-size: cover;
   }
 
   .top-main h2 {
@@ -122,8 +130,7 @@
   }
 
   .about-main {
-    padding-top: 650px;
-    padding-bottom: 100px;
+    padding: 650px 0 500px 0;
   }
 
   .about-main h2 {
