@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:logout, :edit, :update]}
-  before_action :ensure_correct_user, {only: [:edit, :update]}
+  before_action :ensure_correct_user, {only: [:edit]}
 
   def new
     @user = User.new
@@ -46,11 +46,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: params[:id])
+    
   end
   
   def update
-    @user = User.find_by(id: params[:id])
+    
     if @user = User.update(user_params_update)
       flash[:notice] = "Successfully updating your information"
       redirect_to("/users/#{@current_user.id}/edit")

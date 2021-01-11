@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
     end
 
     def ensure_correct_user
+      @user = User.find_by(id: params[:id])
       if @current_user.id != params[:id].to_i
         flash[:notice] = "You are not allowed to acces this page."
         redirect_to("/users/#{@current_user.id}/edit")
