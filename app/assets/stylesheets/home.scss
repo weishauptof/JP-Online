@@ -195,7 +195,7 @@
     position: absolute;
     margin-top: 64px;
     width: 100%;
-    height: 100vh;
+    min-height: 100%;
     color: white;
     background:linear-gradient(rgb(255, 110, 52),rgb(252, 135, 246));
   }
@@ -269,12 +269,26 @@
     color: rgb(0, 136, 170);
   }
 
+  /* ユーザー情報の中のフィードバック */
+
+  .feedback-list-item a {
+    color: white;
+    font-weight: 900;
+    display: block;
+    border-top: white 1px solid;
+    border-bottom: white 1px solid;
+    border-right: none;
+    border-left: none;
+    width: 100%;
+    padding: 30px;
+  }
+
   /*lesson 予約ページ*/
   .lessons-back {
     position: absolute;
     margin-top: 64px;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     color: white;
     background:linear-gradient(rgb(187, 53, 0),rgb(172, 98, 168));
   }
@@ -362,4 +376,20 @@
     font-size: 14px;
   }
 
+  /*======フィードバック========*/
+
+  .feedback-question {
+    margin: 100px 5px 30px 0;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .feedback-result h2 {
+    text-align: center;
+    font-size: 200px;
+  }
+
+  .feedback-result p {
+    text-align: center;
+    font-size: 40px;
+  }
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'feedbacks/test'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
 
@@ -17,6 +18,10 @@ Rails.application.routes.draw do
   get "lessons/regular" => "lessons#show_regular"
   get "lessons/:id/regular_booking" => "lessons#regular_booking"
   post "lessons/:id/regular_booked" => "lessons#regular_booked"
+
+  get "feedbacks/:id/:id" => "feedbacks#test"
+  post "feedbacks/:id/:id/answer" => "feedbacks#answer"""
+  get "feedbacks/:id/:id/result" => "feedbacks#result"
 
   get '/' => "home#top"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

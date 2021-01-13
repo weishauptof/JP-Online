@@ -19,6 +19,7 @@ class LessonsController < ApplicationController
   end
 
   def trial_booked
+    @lesson.user_id = @current_user.id
     @lesson.user_name = @current_user.name
     @lesson.user_email = @current_user.email
     @lesson.course = "trial"
@@ -39,6 +40,7 @@ class LessonsController < ApplicationController
   end
 
   def regular_booked
+    @lesson.user_id = @current_user.id
     @lesson.user_name = @current_user.name
     @lesson.user_email = @current_user.email
     @lesson.course = "regular"

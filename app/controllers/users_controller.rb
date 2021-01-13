@@ -46,7 +46,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    
+    @lessons = Lesson.where(user_id: @current_user)
+    @feedbacks = Feedback.where(user_id: @current_user.id)
   end
   
   def update

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2021-01-12 13:35:33
+  teacher: MyString
+  question: MyString
+  a1: MyString
+  a2: MyString
+  a3: MyString
+  answer: MyString
+  score: 1
+
+two:
+  time: 2021-01-12 13:35:33
+  teacher: MyString
+  question: MyString
+  a1: MyString
+  a2: MyString
+  a3: MyString
+  answer: MyString
+  score: 1

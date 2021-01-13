@@ -1,0 +1,15 @@
+<div class="users-back">
+  <div class="users-container">
+    <h2 class="form-heading">Result...</h2>
+      <div class="feedback-result">
+        <h2><%= @lesson.result %></h2>
+        <% if @lesson.result == "A" %>
+          <p>Your score is perfect !!</p>
+        <% elsif @lesson.result == "B" %>
+          <p>Your answer is something wrong. Let's try again !!</p>
+        <% elsif @lesson.result == "C" %>
+          <p>Your answer is wrong. Let's try again !!</p>
+        <% end %>
+      </div>
+  </div>
+</div>

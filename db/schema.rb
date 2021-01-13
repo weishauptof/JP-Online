@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_011156) do
+ActiveRecord::Schema.define(version: 2021_01_13_051711) do
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.datetime "time"
+    t.string "teacher"
+    t.string "question"
+    t.string "a1"
+    t.string "a2"
+    t.string "a3"
+    t.integer "answer"
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "a"
+    t.integer "user_id"
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.string "teacher_name", default: "coco"
@@ -20,15 +35,8 @@ ActiveRecord::Schema.define(version: 2020_10_05_011156) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "user_email"
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.string "name"
-    t.string "teacher_id"
-    t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "role", default: "teacher"
+    t.integer "user_id"
+    t.string "result", default: "N"
   end
 
   create_table "users", force: :cascade do |t|

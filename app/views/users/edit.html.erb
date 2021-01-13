@@ -28,5 +28,13 @@
           <% end %>
         </div>
       </div>
+      <div class="feedback-list">
+        <h2 class="form-heading">Feedback</h2>
+        <% @lessons.each do |lesson| %>
+          <div class="feedback-list-item">
+            <%= link_to("#{lesson.start_time.strftime("%d/%m/%Y %H:%M")}" + " result→ #{lesson.result}", "/feedbacks/#{@current_user.id}/#{lesson.id}") %>
+          </div>
+        <% end %>
+     </div>
   </div>
 </div>
