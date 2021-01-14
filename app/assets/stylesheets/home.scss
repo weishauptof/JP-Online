@@ -285,7 +285,7 @@
   }
 
   .schedule {
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 100px;
     color:white;
     background-color: rgb(133, 151, 147);
@@ -318,7 +318,8 @@
 
   .calendar-schedule {
     text-decoration: underline;
-    color: rgb(83, 207, 216);
+    font-weight: 800;
+    color: rgb(2, 238, 255);
   }
 
   .calendar-schedule-booked {
