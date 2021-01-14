@@ -19,8 +19,8 @@
 
   a {
     text-decoration: none ;
-    color: #2d3133;
     font-size: 14px;
+    color: #2d3133;
   }
 
   h1, h2, h3, h4, h5, h6, p {
@@ -37,35 +37,38 @@
   }
 
   /* 共通レイアウト ================================ */
+
   body {
-    color: #2d3133;
-    background-color:white;
     margin: 0;
     height: 100vh;
+    color: #2d3133;
+    background-color:white;
   }
 
   /* ヘッダー ================================ */
+
   header {
     height: 64px;
-    position: absolute;
-    z-index: 1;
     width: 100%;
-    border-bottom: #bcc8d4 solid 1px ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
     background-color: #ffffff;
+    border-bottom: #bcc8d4 solid 1px ;
   }
 
   .header-logo {
     float: left;
     padding-left: 20px;
-    color: rgb(255, 110, 52);
-    font-size: 22px;
     line-height: 64px;
+    font-size: 22px;
     font-weight: 900;
   }
 
   .header-logo a{
-    color: rgb(255, 110, 52);
     font-size: 22px;
+    color: rgb(255, 110, 52);
   }
 
   .header-menus {
@@ -75,10 +78,9 @@
 
   .header-menus li {
     float: left;
+    padding-left: 15px;
     line-height: 64px;
     font-size: 13px;
-    color:rgb(255, 110, 52);
-    padding-left: 15px;
     font-weight: 700;
   }
 
@@ -93,24 +95,23 @@
   }
 
   .header-menus input[type="submit"] {
-    padding: 0 20px;
     float: left;
-    line-height: 64px;
-    color:rgb(255, 110, 52);
     margin: 0;
+    padding: 0 20px;
+    line-height: 64px;
     font-size: 13px;
   }
 
 
-  /* top ====== About us と Lesson detail */
+  /* トップ画面 ======================= */
 
   .main-back:before {
     content:"";
-    display:block;
     position:fixed;
     top:0;
     left:0;
-    z-index:-1;
+    z-index:-2;
+    display:block;
     width:100%;
     height:100vh;
     background:url("/class_image.png") center no-repeat;
@@ -123,10 +124,11 @@
 
   .top-main {
     padding: 500px 0 500px;
-    text-align: center;
     width: 100%;
     height: 500px;
     min-height: 50%;
+    text-align: center;
+
   }
 
   .top-main h2 {
@@ -140,10 +142,10 @@
   }
 
   .about-main h2 {
+    padding-left: 5%;
+    line-height: 1.4;
     font-size: 100px;
     font-weight: 500;
-    line-height: 1.4;
-    padding-left: 5%;
   }
 
   .about-main p {
@@ -155,6 +157,8 @@
     color: rgb(3, 101, 126);
   }
 
+  /* レッスン詳細( top.html.erb と about.html.erb ) ===================== */
+
   .lessnos-about-main {
     padding: 150px 5% 0 5%;
   }
@@ -165,31 +169,31 @@
   }
 
   .lessnos-about-main h3 {
-    font-size: 30px;
     margin: 50px 5% 0 5%;
+    font-size: 30px;
   }
 
   .lessnos-about-main p {
-    font-size: 20px;
     margin: 20px 10% 0 10%;
+    font-size: 20px;
   }
 
   .lessnos-about-main a {
-    text-align: center;
-    width: 180px;
-    display: block;
-    padding: 10px 10px;
-    background-color: white;
     cursor: pointer;
-    border-radius: 4px;
     margin: 30px auto 0 auto ;
+    padding: 10px 10px;
+    display: block;
+    width: 180px;
+    text-align: center;
+    background-color: white;
+    border-radius: 4px;
   }
 
   .regular-lesson-about {
     padding:100px 0 100px 0;
   }
 
-  /* userページ */
+  /* ユーザーページ ====================== */
 
   .users-back {
     position: absolute;
@@ -221,16 +225,16 @@
   }
 
   .form input {
+    margin-bottom: 50px;
+    padding: 10px;
     width: 100%;
     border-bottom: 1px solid #ffffff;
     border-top: none;
     border-left: none;
     border-right: none;
-    padding: 10px;
-    color: #57575f;
     font-size: 16px;
     letter-spacing: 2px;
-    margin-bottom: 50px;
+    color: #57575f;
   }
 
   .form input:focus {
@@ -239,13 +243,13 @@
   }
 
   .form input[type="submit"] {
-    background-color: white;
     cursor: pointer;
-    font-weight: 300;
+    float: right;
+    margin-top: 10px;
     width: 250px;
     border-radius: 4px;
-    margin-top: 10px;
-    float: right;
+    font-weight: 300;
+    background-color: white;
   }
 
   .form-error {
@@ -259,8 +263,8 @@
   .users-form h4{
     margin-top: 100px;
     font-weight: lighter;
-    color: white;
     font-size: 12px; 
+    color: white;
   }
 
   .users-form a {
@@ -269,127 +273,152 @@
     color: rgb(0, 136, 170);
   }
 
-  /* ユーザー情報の中のフィードバック */
-
-  .feedback-list-item a {
-    color: white;
-    font-weight: 900;
-    display: block;
-    border-top: white 1px solid;
-    border-bottom: white 1px solid;
-    border-right: none;
-    border-left: none;
-    width: 100%;
-    padding: 30px;
+  /* レッスン予約ページ(カレンダー) ========================== */
+  
+  .calendar-heading {
+    text-align: center;
   }
 
-  /*lesson 予約ページ*/
+  .move {
+    text-decoration: underline;
+    color: white;
+  }
+
+  .schedule {
+    height: 100vh;
+    padding-top: 100px;
+    color:white;
+    background:linear-gradient(rgb(61, 61, 61),rgb(0, 0, 0));
+  }
+
+  .schedule h2 {
+    padding-left: 5%;
+    line-height: 1;
+    font-size: 100px;
+    font-weight: 500;
+  }
+
+  .lessons-calendar {
+    margin: 100px 20% 0 20%;
+    padding-bottom: 100px;
+  }
+
+  .lessons-calendar span {
+    margin: 0 10px;
+    font-size: 40px;
+  }
+
+  .lessons-calendar a {
+    cursor: pointer;
+    display: inline;
+    padding: none;
+    border-radius: 4px;
+    background-color: none;
+  }
+
+  .calendar-schedule {
+    text-decoration: underline;
+    color: rgb(83, 207, 216);
+  }
+
+  .calendar-schedule-booked {
+    font-size: 14px;
+    color: black;
+  }
+
+  /* レッスン予約確認ページ ========================== */
+
   .lessons-back {
     position: absolute;
     margin-top: 64px;
     width: 100%;
     min-height: 100vh;
     color: white;
-    background:linear-gradient(rgb(187, 53, 0),rgb(172, 98, 168));
+    background:linear-gradient(rgb(61, 61, 61),rgb(0, 0, 0));
   }
 
   .lessons-container {
-    max-width: 600px;
     margin: 60px auto;
+    max-width: 600px;
   }
 
   .booking-input {
-    text-align: center;
-    width: 180px;
+    cursor: pointer;
+    margin: 30px auto 0 auto;
     display: block;
     padding: 10px 10px;
+    width: 180px;
+    border-radius: 4px;
+    text-align: center;
     background-color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    margin: 30px auto 0 auto;
   }
-  
-  /* フラッシュ */
-  .flash {
-    padding: 10px 0;
-    color:rgb(255, 255, 255);
-    background: rgb(73, 73, 73);
-    text-align: center;
-    position: absolute;
-    top: 64px;
-    z-index: 10;
+
+  /* ユーザー情報の下の確認テスト一覧 ======================= */
+
+  .feedback-list h2 {
+    margin: 100px 0 20px;
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .feedback-list-item a {
+    padding: 30px;
+    display: block;
     width: 100%;
-    border-radius: 0 0 2px 2px;
-    font-size: 14px;
-  }
-
-  /*カレンダー*/
-
-  .calendar-heading {
-    text-align: center;
-  }
-
-  .move {
+    border-top: white 1px solid;
+    border-bottom: white 1px solid;
+    border-right: none;
+    border-left: none;
+    font-weight: 900;
     color: white;
-    text-decoration: underline;
   }
 
-  .schedule {
-    background-color: #57575f;
-    padding-top: 100px;
-    color:white;
-    height: 100vh;
-  }
-
-  .schedule h2 {
-    font-size: 100px;
-    font-weight: 500;
-    line-height: 1;
-    padding-left: 5%;
-  }
-
-  .lessons-calendar {
-    margin: 30px 10% 0 10%;
-    padding-bottom: 100px;
-  }
-
-  .lessons-calendar span {
-    font-size: 40px;
-    margin: 0 10px;
-  }
-
-  .lessons-calendar a {
-    display: inline;
-    padding: none;
-    cursor: pointer;
-    border-radius: 4px;
-    background-color: none;
-  }
-
-  .calendar-schedule {
-    color: rgb(83, 207, 216);
-    text-decoration: underline;
-  }
-
-  .calendar-schedule-booked {
-    color: black;
-    font-size: 14px;
-  }
-
-  /*======フィードバック========*/
+  /* 確認テスト画面 ================= */
 
   .feedback-question {
     margin: 100px 5px 30px 0;
     border-bottom: 1px solid #ffffff;
   }
 
-  .feedback-result h2 {
+  .feedback input[type="submit"] {
+    cursor: pointer;
+    margin: 100px auto 0 auto ;
+    display: block;
+    padding: 10px 10px;
+    width: 180px;
+    border-radius: 4px;
+    border: none;
     text-align: center;
+    font-size: 14px;
+    background-color: white;
+  }
+
+  /* フィードバック(テスト結果) ================= */
+
+  .feedback-result {
+    text-align: center;
+  }
+
+  .feedback-result h2 {
     font-size: 200px;
   }
 
   .feedback-result p {
-    text-align: center;
     font-size: 40px;
   }
 
+    /* フラッシュ　=========================== */
+
+    .flash {
+      position: absolute;
+      top: 64px;
+      width: 100%;
+      z-index: 1;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+      color:rgb(255, 255, 255);
+      background: rgb(73, 73, 73);
+    }
+  
+    

@@ -1,6 +1,6 @@
 <div class="users-back">
   <div class="users-container">
-    <div class="form-heading">Feedback<br>(<%= @lesson.start_time.strftime("%d/%m/%Y %H:%M") %>)</div>
+    <div class="form-heading">Comprehension check<br>(<%= @lesson.start_time.strftime("%d/%m/%Y %H:%M") %>)</div>
       <div class="feedback">
         <div class="form-body">
             <div class="form-group">
@@ -8,20 +8,22 @@
                 <div class="feedback-list-item">
                   <h2 class="feedback-question">Question</h2>
                   <h3><%= feedback.question %><h3>
-                  <br><p>&nbsp&nbspSelect below option</p>
+                  <br><p>&nbsp&nbspSelect below options</p>
                   <p>1.  <%= feedback.a1 %></p>
                   <p>2.  <%= feedback.a2 %></p>
                   <p>3.  <%= feedback.a3 %></p>
                 </div>
-              <%= form_with  url: "/feedbacks/#{@current_user.id}/#{@lesson.id}/answer", local: true do |f| %>
-                <br><%= f.radio_button :a, '1' %>
-                <%= f.label :a, '1' %>
-                &nbsp;&nbsp;&nbsp;<%= f.radio_button 'a', '2' %>
-                <%= f.label 'a', '2' %>
-                &nbsp;&nbsp;&nbsp;<%= f.radio_button 'a', '3' %>
-                <%= f.label 'a', '3' %>
-                <br><br><%= f.submit "answer question", data: {confirm: "Please confirm your information again. If you're information is fine, please press [OK]. You can edit your information at any time. But 'timezome' is very improtant to book your lesson. So please select carefully. "} %>
-               <% end %>
+                <%= form_with  url: "/feedbacks/#{@current_user.id}/#{@lesson.id}/answer", local: true do |f| %>
+                  <br><%= f.radio_button :a, '1' %>
+                  <%= f.label :a, '1' %>
+                  &nbsp;&nbsp;&nbsp;<%= f.radio_button 'a', '2' %>
+                  <%= f.label 'a', '2' %>
+                  &nbsp;&nbsp;&nbsp;<%= f.radio_button 'a', '3' %>
+                  <%= f.label 'a', '3' %>
+                    <% if @maxid == feedback.id %>
+                      <br><br><%= f.submit "Submit your question", data: {confirm: "Please confirm your answer. If you don't ask question, we regards your score as 0 ."} %>
+                    <% end %>
+                <% end %>
               <% end %>
             </div>    
         </div>

@@ -3,6 +3,17 @@ class FeedbacksController < ApplicationController
   def test
     @lesson = Lesson.find_by(id: params[:id])
     @feedbacks = Feedback.where(time: @lesson.start_time)
+    
+    @maxid = 0
+    
+    @feedbacks.each do |feedback|
+      if feedback.id > @maxid
+         @maxid = feedback.id
+      else
+         @maxid = @maxid
+      end      
+    end
+
   end
 
   def answer
@@ -12,7 +23,7 @@ class FeedbacksController < ApplicationController
     @feedbacks.each do |feedback|
         feedback.a = params[:a].to_i
         feedback.save
-        flash[:notice] = "Your answer is loarded"
+        flash[:notice] = "Your answer is loaded"
     end
 
     redirect_to("/feedbacks/#{@current_user.id}/#{@lesson.id}/result")
